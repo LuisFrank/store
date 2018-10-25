@@ -1,0 +1,46 @@
+<div class=" section-padding-100">
+    <div class="container-fluid">
+        <p id="notice"><%= notice %></p>
+
+        <h1>Flowers</h1>
+
+        <table  class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>Description</th>
+              <th>Condition</th>
+              <th>Finish</th>
+              <th>Title</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @flowers.each do |flower| %>
+              <tr>
+                <td><%= flower.brand %></td>
+                <td><%= flower.model %></td>
+                <td><%= flower.description %></td>
+                <td><%= flower.condition %></td>
+                <td><%= flower.finish %></td>
+                <td><%= flower.title %></td>
+                <td><%= flower.price %></td>
+                <td><%= flower.category.name %></td>
+                <td>
+                    <%= link_to 'Show', flower %>
+                    <%= link_to 'Edit', edit_flower_path(flower) %>
+                    <%= link_to 'Destroy', flower, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+          <br>
+        <%= link_to 'New Flower', new_flower_path %>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <p id="notice"><%= notice %></p>
+
+        <p>
+          <strong>Brand:</strong>
+          <%= @flower.brand %>
+        </p>
+
+        <p>
+          <strong>Model:</strong>
+          <%= @flower.model %>
+        </p>
+
+        <p>
+          <strong>Description:</strong>
+          <%= @flower.description %>
+        </p>
+
+        <p>
+          <strong>Condition:</strong>
+          <%= @flower.condition %>
+        </p>
+
+        <p>
+          <strong>Finish:</strong>
+          <%= @flower.finish %>
+        </p>
+
+        <p>
+          <strong>Title:</strong>
+          <%= @flower.title %>
+        </p>
+
+        <p>
+          <strong>Price:</strong>
+          <%= @flower.price %>
+        </p>
+
+        <p>
+          <strong>Category:</strong>
+          <%= @flower.category %>
+        </p>
+
+        <%= link_to 'Edit', edit_flower_path(@flower) %> |
+        <%= link_to 'Back', flowers_path %>
+    </div>
+</div>
