@@ -1,18 +1,26 @@
 <div class="row">
     <div class="col-12 col-lg-8">
-        <%= simple_form_for(@flower) do |f| %>
+        <%= simple_form_for(@flower, html: {  multipart: true})   do |f| %>
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
           <div class="form-inputs">
-            <%= f.input :brand %>
+            <%= f.input :brand, collection: Flower::BRAND , prompt: "Select Brand" , wrapper: :vertical_collection%>
             <%= f.input :model %>
             <%= f.input :description %>
-            <%= f.input :condition %>
-            <%= f.input :finish %>
+            <%= f.input :condition , collection: Flower::CONDITION ,prompt: "Select Condition", wrapper: :vertical_collection%>
+            <%= f.input :finish, collection: Flower::FINISH ,prompt:  "Select Finish" , wrapper: :vertical_collection%>
             <%= f.input :title %>
             <%= f.input :price %>
-            <%= f.association :category %>
+            <%= f.association :category, prompt: "Select category ", wrapper: :vertical_collection %>
+
+            <%= f.input :images, as: :file, :input_html => { :multiple => true, :id => "files" } %>
+        <div class="form-group">
+            <div id="filelist" style="display:none;"></div>
+        </div>
+    <% @flower.images.each do |i|%>
+            <%= image_tag i.url(:thumb) %>
+            <%end%>
           </div>
 
           <div class="form-actions">

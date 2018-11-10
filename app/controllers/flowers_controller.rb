@@ -15,7 +15,7 @@ class FlowersController < ApplicationController
 
   # GET /flowers/new
   def new
-    @flower = current_user.intruments.build
+    @flower = current_user.flowers.build
   end
 
   # GET /flowers/1/edit
@@ -25,7 +25,7 @@ class FlowersController < ApplicationController
   # POST /flowers
   # POST /flowers.json
   def create
-    @flower = current_user.intruments.build(flower_params)
+    @flower = current_user.flowers.build(flower_params)
 
     respond_to do |format|
       if @flower.save
@@ -70,6 +70,6 @@ class FlowersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flower_params
-      params.require(:flower).permit(:brand, :model, :description, :condition, :finish, :title, :price, :category_id, :image)
+      params.require(:flower).permit(:brand, :model, :description, :condition, :finish, :title, :price, :category_id,  images: [])
     end
 end

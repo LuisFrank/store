@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_035239) do
+ActiveRecord::Schema.define(version: 2018_10_27_181524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_035239) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.integer "user_id"
+    t.json "images"
     t.index ["category_id"], name: "index_flowers_on_category_id"
   end
 

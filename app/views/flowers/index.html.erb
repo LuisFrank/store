@@ -31,9 +31,11 @@
                 <td><%= flower.price %></td>
                 <td><%= flower.category.name %></td>
                 <td>
+                  <%if flower_author(flower)%>
                     <%= link_to 'Show', flower %>
                     <%= link_to 'Edit', edit_flower_path(flower) %>
                     <%= link_to 'Destroy', flower, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%end%>
               </td>
 
               </tr>
