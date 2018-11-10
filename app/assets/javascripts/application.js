@@ -13,7 +13,7 @@
 //= require js/jquery/jquery-2.2.4.min
 //= require rails-ujs
 //= require js/popper.min.js
-//= require js/bootstrap.min.js
+//= require bootstrap
 //= require js/plugins.js
 //= require js/active.js
 //= require activestorage
